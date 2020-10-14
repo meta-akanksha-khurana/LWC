@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title={contact.Name} icon-name="standard:contact">
+        <lightning-record-edit-form object-api-name="Contact" record-id={contact.Id}>
+            <div class="slds-var-m-around_medium">
+                <lightning-output-field field-name="Title"></lightning-output-field>
+                <lightning-input-field field-name="Email" value={contactDetail.Email}>
+                </lightning-input-field>
+                <lightning-input-field field-name="Phone" value={contactDetail.Phone}>
+                </lightning-input-field>
+                <lightning-input-field field-name="AccountId" value={contactDetail.AccountId} onchange={handleChange}>
+                </lightning-input-field>
+                <template if:true={seeButtons}>
+                    <lightning-button 
+                        variant="Neutral"
+                        label="Cancel" 
+                        title="Cancel" 
+                        class="slds-var-m-left_x-small" 
+                        onclick={handleReset}>
+                    </lightning-button>
+                    <lightning-button
+                        variant="brand"
+                        label="Save" 
+                        title="Save Record" 
+                        class="slds-var-m-left_x-small" 
+                        type="submit"
+                        onclick={handleSuccess}>
+                    </lightning-button>
+                </template>
+
+</div>
+</lightning-record-edit-form>
+</lightning-card>
+</template>

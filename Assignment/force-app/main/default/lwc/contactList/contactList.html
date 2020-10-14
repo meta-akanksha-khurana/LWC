@@ -1,0 +1,14 @@
+<template>
+    <template if:true={contacts.data}>
+        <!--<h2>contacts exist</h2>-->
+        <template for:each={contacts.data} for:item="con">
+            <c-contact-tile contact={con}
+                            key={con.Id}
+                            onupdateaccount={handleUpdateAccount}></c-contact-tile>
+        </template>
+</template>
+
+<template if:false={contacts.data}>
+        <h2>No related contacts</h2>
+    </template>
+</template>
